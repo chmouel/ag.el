@@ -240,7 +240,7 @@ If REGEXP is non-nil, treat STRING as a regular expression."
       (error "No such directory %s" default-directory))
     (let ((command-string
            (mapconcat #'shell-quote-argument
-                      (append (list ag-executable) arguments (list string "."))
+                      (append (list ag-executable) arguments (list string default-directory))
                       " ")))
       ;; If we're called with a prefix, let the user modify the command before
       ;; running it. Typically this means they want to pass additional arguments.
